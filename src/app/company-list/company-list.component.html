@@ -1,0 +1,23 @@
+<div class="w-md">
+  <ul class="flex flex-col gap-3">
+    @for(item of companyListTreated(); track item.siret){
+    <li (click)="this.handleClick.emit(item)"><app-company-item [item]="item"> </app-company-item></li>
+    }
+  </ul>
+  <hr class="my-3 border-cyan-500" />
+  <div class="flex justify-center items-center gap-2">
+    @for(page of pagesDisplayed(); track page){
+    <div
+      (click)="pageSelected.set(page)"
+      [class.bg-cyan-500]="page === this.pageSelected()"
+      [class.text-gray-800]="page === this.pageSelected()"
+      [class.text-cyan-500]="page !== this.pageSelected()"
+      [class.border-cyan-500]="page !== this.pageSelected()"
+      [class.bg-transparent]="page !== this.pageSelected()"
+      class="flex items-center justify-center w-8 h-8 border rounded-md cursor-pointer hover:bg-cyan-500 hover:text-gray-800 transition-colors"
+    >
+      <span class="text-sm font-medium">{{ page }}</span>
+    </div>
+    }
+  </div>
+</div>

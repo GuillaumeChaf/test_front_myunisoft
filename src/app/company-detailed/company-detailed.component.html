@@ -1,0 +1,40 @@
+<div class="w-md w-max-md company-card bg-gray-800 text-gray-200 p-6 rounded-lg shadow-lg border border-cyan-500">
+  <div class="header mb-4">
+    <h1 class="text-2xl font-bold text-cyan-400">
+      {{ company()?.denominationUniteLegale ?? 'Inconnu' }}
+    </h1>
+    <p class="text-sm text-gray-400">
+      Créé le :
+      <span class="text-gray-300">
+        {{ company()?.dateCreationEtablissement ? (company()?.dateCreationEtablissement | date : 'longDate') : 'Inconnu' }}
+      </span>
+    </p>
+  </div>
+  <hr class="border-gray-600 mb-4" />
+  <div class="details space-y-2">
+    <p>
+      <span class="font-medium text-gray-400">Adresse :</span>
+      <span>{{ company()?.adresseEtablissement ?? 'Inconnu' }}</span>
+    </p>
+    <p>
+      <span class="font-medium text-gray-400">SIREN :</span>
+      <span>{{ company()?.siren ?? 'Inconnu' }}</span>
+    </p>
+    <p>
+      <span class="font-medium text-gray-400">SIRET :</span>
+      <span>{{ company()?.siret ?? 'Inconnu' }}</span>
+    </p>
+    <p>
+      <span class="font-medium text-gray-400">Catégorie d'entreprise :</span>
+      <span>{{ company()?.categorieEntreprise ?? 'Inconnu' }}</span>
+    </p>
+    <p>
+      <span class="font-medium text-gray-400">Activité principale :</span>
+      <span>{{ company()?.activitePrincipaleUniteLegale ?? 'Inconnu' }}</span>
+    </p>
+    <p>
+      <span class="font-medium text-gray-400">Catégorie juridique :</span>
+      <span>{{ company()?.categorieJuridiqueUniteLegale ?? 'Inconnu' }}</span>
+    </p>
+  </div>
+</div>
