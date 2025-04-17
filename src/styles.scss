@@ -1,20 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'tailwindcss';
 
-$main-cyan: #0891b2;
+$chart-cyan: #5a8bc4;
+$chart-bg: #1e293b;
 
+.bg {
+  background-color: $chart-bg;
+}
+.chart-title {
+  text-shadow: 0 0 1px $chart-cyan, 0 0 2px $chart-cyan;
+  color: $chart-cyan;
+}
 .chart-text {
-  text-shadow: 0 0 1px $main-cyan, 0 0 2px $main-cyan;
-  color: $main-cyan;
+  color: #e2e8f0;
 }
 
 .chart-box {
-  border: 1px solid $main-cyan;
-  box-shadow: 0 0 1px $main-cyan, 0 0 2px $main-cyan;
+  border: 1px solid $chart-cyan;
+  box-shadow: 0 0 1px $chart-cyan, 0 0 2px $chart-cyan;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 
-  &:hover {
-    box-shadow: 0 0 2px $main-cyan, 0 0 4px $main-cyan;
-    transform: scale(1.01);
+  &.chart-box-hover:hover {
+    box-shadow: 0 0 2px $chart-cyan, 0 0 4px $chart-cyan;
+    transform: scale(1.02);
+  }
+  &.chart-box-activ {
+    background-color: $chart-cyan;
+    > span {
+      color: $chart-bg;
+    }
   }
 }

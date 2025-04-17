@@ -41,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
   /** casting of the target to overwrite textualfilter */
   setTextualFilter(e: EventTarget | null) {
     const target = e as HTMLTextAreaElement;
-    this.textualFilter.set(target?.value ?? '');
+    this.textualFilter.set(target?.value?.trim()?.toLocaleLowerCase() ?? '');
     this.refreshData();
   }
 

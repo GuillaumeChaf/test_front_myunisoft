@@ -9,5 +9,6 @@ import { DatePipe } from '@angular/common';
   styleUrl: './company-detailed.component.scss',
 })
 export class CompanyDetailedComponent {
+  /** company to display details */
   company = input<Company>();
 }

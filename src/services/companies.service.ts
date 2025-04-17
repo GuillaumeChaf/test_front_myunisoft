@@ -13,6 +13,7 @@ export type inseeType = {
 export class CompaniesService {
   constructor(private httpService: HttpClient) {}
 
+  /** get the list of companies from the insee api */
   getCompaniesList(textualFilter?: string): Observable<Company[]> {
     const textualParam = textualFilter ? `?q=raisonSociale:${textualFilter}` : '';
     return this.httpService
