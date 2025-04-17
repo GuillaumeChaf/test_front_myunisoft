@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+
+$main-cyan: #0891b2;
+
+.chart-text {
+  text-shadow: 0 0 1px $main-cyan, 0 0 2px $main-cyan;
+  color: $main-cyan;
+}
+
+.chart-box {
+  border: 1px solid $main-cyan;
+  box-shadow: 0 0 1px $main-cyan, 0 0 2px $main-cyan;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 0 2px $main-cyan, 0 0 4px $main-cyan;
+    transform: scale(1.01);
+  }
+}
